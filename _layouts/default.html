@@ -1,15 +1,16 @@
+<!-- Shared page frame for Articles. The other pages are plain HTML files. -->
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found | Cheed Home Care</title>
-<meta name="description" content="Page not found.">
-<link rel="canonical" href="https://cheedhomecare.com/404.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Page not found | Cheed Home Care">
-<meta property="og:description" content="Page not found.">
-<meta property="og:url" content="https://cheedhomecare.com/404.html">
+<title>{{ page.title }} | Cheed Home Care</title>
+<meta name="description" content="{{ page.description | xml_escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | xml_escape }}">
+<meta property="og:description" content="{{ page.description | xml_escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta name="theme-color" content="#1d2f55">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,7 @@
       <a href="/">Home</a>
       <a href="/about.html">About us</a>
       <a href="/services.html">Services</a>
-      <a href="/articles/">Articles</a>
+      <a href="/articles/"{% if page.url contains '/articles/' %} aria-current="page"{% endif %}>Articles</a>
       <a href="/resources.html">Resources</a>
       <a href="/contact.html">Contact</a>
       <a class="btn btn-primary" href="/contact.html#form">Book a free consultation</a>
@@ -38,13 +39,8 @@
   </div>
 </header>
 <main id="main">
-<section class="notfound">
-  <div class="wrap">
-    <h1>We couldn't find that page</h1>
-    <p>The page may have moved. Head back home, or call us at <a href="tel:+15879730318">587-973-0318</a>.</p>
-    <a class="btn btn-navy" href="/">Go to the home page</a>
-  </div>
-</section></main>
+{{ content }}
+</main>
 
 <footer class="site-footer">
   <div class="wrap">

@@ -467,3 +467,32 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .strip { position: relative; z-index: 2; }
 @media (max-width: 860px) { .hero-photo { height: 260px; } }
 .nav a.btn { border-radius: 999px; }
+
+/* ---------- Articles ---------- */
+.article-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.article-list li { display: grid; grid-template-columns: 140px 1fr; gap: 8px 32px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.article-list time { font-family: var(--font-head); font-size: .98rem; color: var(--ink-soft); padding-top: 4px; }
+.article-list h2, .article-list h3 { font-size: 1.35rem; margin: 0 0 6px; }
+.article-list h2 a, .article-list h3 a { color: var(--navy); text-decoration: none; }
+.article-list h2 a:hover, .article-list h3 a:hover { color: var(--teal); text-decoration: underline; }
+.article-list p { margin: 0; color: var(--ink-soft); max-width: 44em; }
+@media (max-width: 640px) { .article-list li { grid-template-columns: 1fr; } }
+
+.article-wrap { max-width: 760px; }
+.article-head { background: var(--mist); border-bottom: 1px solid var(--line); padding: clamp(36px, 6vw, 72px) 0 clamp(32px, 5vw, 56px); }
+.article-back { display: inline-block; font-family: var(--font-head); font-size: 1rem; margin-bottom: 18px; }
+.article-head h1 { font-size: clamp(2rem, 4.2vw, 3rem); margin-bottom: .4em; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0; color: var(--ink-soft); font-size: 1.02rem; }
+.article-body { padding-top: clamp(36px, 5vw, 56px); padding-bottom: clamp(48px, 7vw, 88px); }
+.article-body p, .article-body li { font-size: 1.18rem; line-height: 1.75; }
+.article-body > p:first-child { font-family: var(--font-head); font-weight: 300; font-size: clamp(1.3rem, 2.3vw, 1.5rem); line-height: 1.5; color: var(--navy); }
+.article-body h2 { font-size: clamp(1.4rem, 2.6vw, 1.75rem); margin: 1.8em 0 .55em; }
+.article-body ul, .article-body ol { padding-left: 1.3em; margin: 0 0 1.2em; }
+.article-body li { margin-bottom: .6em; }
+.article-body li::marker { color: var(--teal); }
+.article-body strong { color: var(--navy); }
+.article-cta { margin-top: 56px; padding: clamp(24px, 4vw, 36px); border-radius: var(--radius); background: var(--teal-soft); }
+.article-cta h2 { margin-top: 0; font-size: 1.5rem; }
+.article-cta p { font-size: 1.1rem; }
+.article-body .article-cta p { font-size: 1.1rem; }
+.article-body li > p { margin: 0; }

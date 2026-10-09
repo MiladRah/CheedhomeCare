@@ -1,0 +1,28 @@
+---
+layout: default
+title: Articles
+description: Practical guidance for Calgary families caring for an aging parent or loved one at home, from the Cheed Home Care team.
+---
+<section class="page-head">
+  <div class="wrap">
+    <h1>Articles</h1>
+    <p>Practical guidance for families caring for an aging parent or loved one at home in Calgary.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:960px">
+    {% if site.posts.size > 0 %}
+    <ul class="article-list">
+      {% for post in site.posts %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <div><h2><a href="{{ post.url }}">{{ post.title }}</a></h2><p>{{ post.description }}</p></div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>New articles are on the way. In the meantime, see our <a href="/resources.html">resources for seniors in Alberta</a>.</p>
+    {% endif %}
+  </div>
+</section>

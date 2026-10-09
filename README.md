@@ -3,7 +3,7 @@
 Plain HTML/CSS/JS site for **cheedhomecare.com**, hosted free on GitHub Pages.
 
 ```
-index.html       Home
+index.html       Home (shows the 3 latest articles automatically)
 about.html       About us
 services.html    Services
 contact.html     Contact form
@@ -13,7 +13,36 @@ css/styles.css   All styling
 js/main.js       Mobile menu + contact form
 images/          Your photos go here (see images/README.txt)
 CNAME            Tells GitHub Pages to use cheedhomecare.com
+articles/        The Articles page (lists every article automatically)
+_posts/          One file per article
+_layouts/        The design every article uses
+_config.yml      Settings for the article system
+tools/           Converter that turns a Word article into a post
 ```
+
+## Adding an article
+
+Each article is one file in `_posts/`, named `YYYY-MM-DD-short-title.html`.
+The Articles page, the home page list and the sitemap update themselves.
+
+Easiest: send the Word file to Claude and ask it to post the article.
+
+By hand (needs pandoc and Python):
+
+```
+python3 tools/new_article.py "My Article.docx"
+```
+
+Then upload the new file in `_posts/` (and `images/articles/...` if the
+article has pictures) to GitHub. The page is live in 1–2 minutes at
+`https://cheedhomecare.com/articles/<short-title>/`.
+
+Word file format: title as Heading 1, an optional paragraph starting
+"Description:", and section headings as Heading 2. A closing
+"Talk to CHEED Home Care" box is not needed; every article ends with one.
+
+**Do not add a `.nojekyll` file.** The article system relies on GitHub's
+built-in Jekyll build.
 
 ## 1. Connect the contact form (free, 5 minutes)
 

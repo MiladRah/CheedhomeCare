@@ -1,0 +1,15 @@
+# Jekyll settings for GitHub Pages. Only the Articles section uses them;
+# the other pages are plain HTML and are published as-is.
+title: Cheed Home Care
+url: "https://cheedhomecare.com"
+timezone: America/Edmonton
+exclude:
+  - README.md
+  - tools
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      permalink: /articles/:title/

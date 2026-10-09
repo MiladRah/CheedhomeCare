@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="article-head">
+    <div class="wrap article-wrap">
+      <a class="article-back" href="/articles/">All articles</a>
+      <h1>{{ page.title }}</h1>
+      <p class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <span>{{ content | strip_html | number_of_words | divided_by: 220 | plus: 1 | floor }} minute read</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="wrap article-wrap article-body">
+{{ content }}
+    <aside class="article-cta">
+      <h2>Talk to Cheed Home Care</h2>
+      <p>If you are wondering whether a little extra help at home would make life easier and safer, we are happy to talk it through, with no pressure and no obligation. Call or text 587-973-0318, email info@cheedinc.com, or book a free in-home consultation.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact.html#form">Book a free consultation</a>
+        <a class="btn btn-outline" href="tel:+15879730318">Call 587-973-0318</a>
+      </div>
+    </aside>
+  </div>
+</article>
+
+{% assign others = site.posts | where_exp: "p", "p.url != page.url" %}
+{% if others.size > 0 %}
+<section class="section section-mist">
+  <div class="wrap article-wrap">
+    <h2>More articles</h2>
+    <ul class="article-list">
+      {% for post in others limit: 3 %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <div><h3><a href="{{ post.url }}">{{ post.title }}</a></h3><p>{{ post.description }}</p></div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+"headline":{{ page.title | jsonify }},
+"description":{{ page.description | jsonify }},
+"datePublished":"{{ page.date | date_to_xmlschema }}",
+"url":"{{ page.url | absolute_url }}",
+"author":{"@type":"Organization","name":"Cheed Home Care"},
+"publisher":{"@type":"Organization","name":"Cheed Home Care","url":"https://cheedhomecare.com"}}
+</script>
