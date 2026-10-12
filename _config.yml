@@ -3,6 +3,8 @@
 title: Cheed Home Care
 url: "https://cheedhomecare.com"
 timezone: America/Edmonton
+# Publish articles right away even when their date is in the future.
+future: true
 exclude:
   - README.md
   - tools
