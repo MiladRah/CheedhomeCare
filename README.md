@@ -46,7 +46,7 @@ built-in Jekyll build.
 
 ## 1. Connect the contact form (free, 5 minutes)
 
-1. Go to **web3forms.com**, enter the email that should receive enquiries (e.g. info@cheedinc.com), and they email you an **access key**.
+1. Go to **web3forms.com**, enter the email that should receive enquiries (e.g. info@cheedhomecare.com), and they email you an **access key**.
 2. Open `contact.html`, find `YOUR_ACCESS_KEY` and replace it with your key.
 
 The key is designed to be public, so it is safe in a public GitHub repo. Messages go straight to your email; they are never stored in the repo or visible on the site.

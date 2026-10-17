@@ -53,7 +53,7 @@ document.querySelectorAll("[data-year]").forEach(function (el) {
 
     var key = form.querySelector("[name=access_key]").value;
     if (!key || key.indexOf("YOUR_") === 0) {
-      show("err", "The contact form isn't connected yet. Please call or text 587-973-0318, or email info@cheedinc.com.");
+      show("err", "The contact form isn't connected yet. Please call or text 587-973-0318, or email info@cheedhomecare.com.");
       return;
     }
 
